@@ -1,4 +1,3 @@
-from unidecode import unidecode
 import pandas as pd
 import re
 
@@ -15,8 +14,6 @@ def limparstr(string, type):
         expression = re.compile(r'(.)\1{2,}')
         # Aplica a expressão
         str_limpa = expression.sub(r'\1', str(string))
-        # Remove acentuaçoes
-        str_limpa = unidecode(str_limpa)
     else:
         ## CASO NUMERICO
         str_limpa = re.sub(r'[^0-9.]', '', str(string))
